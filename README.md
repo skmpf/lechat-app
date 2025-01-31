@@ -1,20 +1,43 @@
-# Welcome to your Expo app 👋
+# Welcome to Mistral's Le Chat mobile app 👋
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
+## Project overview
+
+Mistral's Le Chat is a proof-of-concept (POC) chat application built with Expo and AI SDK, powered by Mistral AI. This app enables users to engage in chatbot conversations, with AI-generated responses tailored to their input.
+
+## Features
+
+- ✨ **Mistral AI Integration** - Seamless AI-powered chatbot experience using AI SDK by Vercel
+- 👨‍💻 **Built with Expo** - Leverage the flexibility of Expo for cross-platform development
+- 🌈 **NativeWind Styling** - Utility-first styling for rapid and responsive UI design
+
+## Demo
+
+![App Screenshot](/assets/images/demo.png)
+
 ## Get started
 
-1. Install dependencies
+Follow these steps to set up and run the project:
 
-   ```bash
-   npm install
-   ```
+### 1. Clone the repository
 
-2. Start the app
+```bash
+git clone https://github.com/skmpf/lechat-app.git
+```
 
-   ```bash
-    npx expo start
-   ```
+### 2. Install dependencies
+
+```bash
+cd lechat-app
+pnpm install
+```
+
+### 3. Start the app
+
+```bash
+npx expo start
+```
 
 In the output, you'll find options to open the app in a
 
@@ -25,26 +48,20 @@ In the output, you'll find options to open the app in a
 
 You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
-## Get a fresh project
+### 4. Configure Mistral AI API Key
 
-When you're ready, run:
+1. Obtain a Mistral AI API key from [Mistral Console](https://console.mistral.ai/api-keys/).
+2. Create a `.env.local` file at the project root.
+3. Add your API key:
 
-```bash
-npm run reset-project
-```
+   ```plaintext
+   MISTRAL_API_KEY=your_api_key_here
+   ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Contributing
 
-## Learn more
+Contributions are welcome! Feel free to open an issue or submit a pull request if you have improvements or find any bugs.
 
-To learn more about developing your project with Expo, look at the following resources:
+## License
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
