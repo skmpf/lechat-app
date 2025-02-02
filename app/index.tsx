@@ -10,6 +10,7 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from "react-native";
+import { useColorScheme } from "nativewind";
 
 export default function App() {
   const { messages, error, handleInputChange, input, handleSubmit } = useChat({
@@ -18,10 +19,12 @@ export default function App() {
     onError: (error) => console.error(error, "ERROR"),
   });
 
+  const { colorScheme } = useColorScheme();
+
   if (error) return <Text>{error.message}</Text>;
 
   return (
-    <SafeAreaView className="h-full">
+    <SafeAreaView className="h-full bg-white text-black dark:bg-black dark:text-white">
       <KeyboardAvoidingView
         behavior={Platform.OS === "ios" ? "padding" : "height"}
         className="flex-1"
@@ -31,8 +34,12 @@ export default function App() {
             {messages.map((m) => (
               <View key={m.id} className="my-8">
                 <View>
-                  <Text className="font-bold">{m.role}</Text>
-                  <Text>{m.content}</Text>
+                  <Text className="font-bold text-black dark:text-white">
+                    {m.role}
+                  </Text>
+                  <Text className="text-black dark:text-white">
+                    {m.content}
+                  </Text>
                 </View>
               </View>
             ))}
@@ -40,8 +47,9 @@ export default function App() {
 
           <View className="my-6 px-4">
             <TextInput
-              className="rounded-md bg-white px-2 py-2"
+              className="rounded-md bg-neutral-100 px-2 py-2 text-black dark:bg-gray-800 dark:text-white"
               placeholder="Say something..."
+              placeholderTextColor={colorScheme === "dark" ? "#ccc" : "#666"}
               value={input}
               onChange={(e) =>
                 handleInputChange({
