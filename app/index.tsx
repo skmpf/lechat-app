@@ -26,8 +26,8 @@ export default function App() {
         behavior={Platform.OS === "ios" ? "padding" : "height"}
         className="flex-1"
       >
-        <View className="h-full flex flex-col px-8">
-          <ScrollView className="flex-1">
+        <View className="flex h-full flex-col">
+          <ScrollView className="flex-1 px-8">
             {messages.map((m) => (
               <View key={m.id} className="my-8">
                 <View>
@@ -38,9 +38,9 @@ export default function App() {
             ))}
           </ScrollView>
 
-          <View className="my-8 ">
+          <View className="my-6 px-4">
             <TextInput
-              className="bg-white px-2 py-2 rounded-md"
+              className="rounded-md bg-white px-2 py-2"
               placeholder="Say something..."
               value={input}
               onChange={(e) =>

@@ -27,7 +27,12 @@ export default function RootLayout() {
   return (
     <>
       <Stack>
-        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen
+          name="index"
+          options={{
+            title: "😸 Le Chat",
+          }}
+        />
       </Stack>
       <StatusBar style="auto" />
     </>
